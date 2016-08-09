@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app> <!-- ng-app means 'Angular you have control over this page' -->
+<head>
+	<title></title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+</head>
+<body>
+	Name: <input type="text" ng-model="firstName">
+	Name: <input type="text" ng-model="lastName">
+	Name: <input type="text" ng-model="name">
+	<br /> Hello, {{firstName}} {{lastName}}
+
+<script type="text/javascript">
+
+// var theInput = document.getElementById("name");
+// var placeName = document.getElementById("placeName");
+// theInput.addEventListener("keyup", function () {
+// 	var inputText = theInput.value;
+// 	placeName.innerHTML = inputText;
+// });
+
+// *************************************************
+//Notes
+// Angular is declarative
+// -html
+// template/view
+// directives
+// Controller
+// $scope
+
+// Compartmentalized:
+//M = Model
+	//data
+//V = View
+	//template, just html
+//C = Controller
+	//the glue, helps model and view talk to each other - the logic
+
+
+</script>
+
+</body>
+</html>

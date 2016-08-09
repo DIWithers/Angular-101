@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app = "myApp">  <!-- ng-app means 'Angular you have control over this page' - only 1 per page -->
+<head>
+	<title></title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	
+	
+	<script>
+	var myApp = angular.module("myApp", []); //(name of ng-app, any dependencies involved)
+	myApp.controller("myController", function($scope){  //"the glue"
+		$scope.firstName = "Danielle"
+		// $scope.$watch("lastName", function(newValue, oldValue) {
+		// 	console.log("The old value was " + oldValue + ". The new value is " + newValue);
+		// });
+
+		$scope.students = ["Summer", "JT", "Jackson", "Shirlette"]; //$scope makes it a variable for the view
+
+
+
+	});
+	</script>
+
+</head>
+<body ng-controller="myController"> <!-- controls the body -->
+
+	First Name: <input type="text" ng-model="firstName">
+	Last Name: <input type="text" ng-model="lastName">
+
+	<div>
+		Welcome to my page, {{firstName}} {{lastName}}
+	</div>
+
+	{{students}}
+
+	<li ng-repeat = "student in students track by $index">
+		 {{$index}}  {{student}} <!-- created by ng-repeat -->
+	</li>
+
+
+
+</body>
+</html>

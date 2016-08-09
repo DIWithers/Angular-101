@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="toDoApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="to-do.js"></script>
+	<link rel="stylesheet" type="text/css" href="to-do.css">
+
+</head>
+<body ng-controller="toDoController">
+	<h1> To-Do-List </h1> 
+	<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Deadline</th>
+				<th>Complete</th>
+			</tr>
+
+			
+
+		</thead>
+			<form ng-submit = "addToDo()">
+			<tr>
+				<input type="text" ng-model="itemTitle" placeholder="Enter title">
+				<input type="text" ng-model="itemDesc" placeholder="Enter description">
+				<input type="text" ng-model="itemDeadline" placeholder="Enter deadline">
+				<button type="submit">Add item</button>
+			</tr>
+			</form>
+
+		<tbody>
+			
+			<tr ng-repeat="item in toDoList track by $index" class="done-{{item.done}}">
+			
+				<td>{{item.title}}</td>
+				<td>{{item.desc}}</td>
+				<td>{{item.deadline}}</td>
+				<td><button type="submit" ng-click="strike()"></button></td>
+				<td><button type="submit" id="rem" ng-click="remove()">Remove</button></td>
+
+			
+			</tr>
+
+		</tbody>
+	</table>
+		{{item.done}}
+				
+				
+				
+				
+				
+			
+	
+
+	
+
+</body>
+</html>

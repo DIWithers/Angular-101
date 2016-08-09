@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="angApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript">
+	var angApp = angular.module("angApp", []);
+	angApp.controller("myController", function($scope){
+		$scope.length = "";
+		$scope.getStrLength = function() {
+			$scope.length = $scope.fullName.length;
+
+		};
+	});
+	
+
+	</script>
+</head>
+<body ng-controller="myController">
+<h2>Please enter your first and last name:</h2>
+<input type="text" ng-keyup="getStrLength()" name="mytext" ng-model="fullName">
+<h3>Hello, </h3> <h2>{{fullName}}</h2>
+<h3>Your name is {{length}} characters long</h3>
+
+</body>
+</html>
